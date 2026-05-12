@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кулінарний блог - Лабораторна робота №4</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <h1>Кулінарний блог “Смачна кухня”</h1>
+            <p class="subtitle">Лабораторна робота №4 - Сергійчук Ілля</p>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="#about">Про блог</a></li>
+                <li><a href="#recipes">Книга рецептів</a></li>
+                <li><a href="#contacts">Контакти</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container main-layout">
+        <article class="content">
+            <section id="about" class="card">
+                <h2>Про кулінарний блог</h2>
+                <p>
+                    “Смачна кухня” - це кулінарний блог для тих, хто любить готувати
+                    прості, смачні та корисні страви вдома. На сторінці реалізовано
+                    інтерактивну книгу рецептів з пошуком і фільтром за категоріями.
+                </p>
+            </section>
+
+            <section id="recipes" class="card">
+                <h2>Інтерактивна книга рецептів</h2>
+
+                <div class="controls">
+                    <div class="form-group">
+                        <label for="searchInput">Пошук за назвою рецепта:</label>
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            placeholder="Наприклад: борщ, салат, піца"
+                            data-search-input
+                        >
+                        <p class="error-message" id="searchError"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="categoryFilter">Фільтр за категорією:</label>
+                        <select id="categoryFilter" data-category-filter>
+                            <option value="all">Усі категорії</option>
+                            <option value="Сніданок">Сніданок</option>
+                            <option value="Перша страва">Перша страва</option>
+                            <option value="Основна страва">Основна страва</option>
+                            <option value="Салат">Салат</option>
+                            <option value="Десерт">Десерт</option>
+                        </select>
+                    </div>
+
+                    <button type="button" class="btn" id="resetButton" data-reset-button>
+                        Скинути фільтри
+                    </button>
+                </div>
+
+                <p class="result-count" id="resultCount"></p>
+
+                <div class="recipe-grid" id="recipeList" data-recipe-list>
+                    <!-- Рецепти додаються через JavaScript -->
+                </div>
+            </section>
+        </article>
+
+        <aside class="sidebar">
+            <section class="card">
+                <h2>Можливості компонента</h2>
+                <ul class="side-list">
+                    <li>Пошук рецепта за назвою</li>
+                    <li>Фільтр за категорією</li>
+                    <li>Динамічне оновлення DOM</li>
+                    <li>Debounce через setTimeout</li>
+                    <li>Валідація введення</li>
+                </ul>
+            </section>
+
+            <section id="contacts" class="card">
+                <h2>Контакти</h2>
+                <p><strong>Автор:</strong> Сергійчук Ілля</p>
+                <p><strong>Email:</strong> foodblog@example.com</p>
+                <p><strong>Instagram:</strong> @smachna_kuhnya</p>
+            </section>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Кулінарний блог “Смачна кухня”. Автор: Сергійчук Ілля.</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
